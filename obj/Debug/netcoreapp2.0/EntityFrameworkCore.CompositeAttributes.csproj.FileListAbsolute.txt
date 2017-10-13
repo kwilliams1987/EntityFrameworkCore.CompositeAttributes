@@ -1,9 +1,0 @@
-C:\proj\Safescan.Webshop\EntityFrameworkCore.CompositeAttributes\bin\Debug\netcoreapp2.0\EntityFrameworkCore.CompositeAttributes.deps.json
-C:\proj\Safescan.Webshop\EntityFrameworkCore.CompositeAttributes\bin\Debug\netcoreapp2.0\EntityFrameworkCore.CompositeAttributes.dll
-C:\proj\Safescan.Webshop\EntityFrameworkCore.CompositeAttributes\obj\Debug\netcoreapp2.0\EntityFrameworkCore.CompositeAttributes.csproj.CoreCompileInputs.cache
-C:\proj\Safescan.Webshop\EntityFrameworkCore.CompositeAttributes\obj\Debug\netcoreapp2.0\EntityFrameworkCore.CompositeAttributes.AssemblyInfoInputs.cache
-C:\proj\Safescan.Webshop\EntityFrameworkCore.CompositeAttributes\obj\Debug\netcoreapp2.0\EntityFrameworkCore.CompositeAttributes.AssemblyInfo.cs
-C:\proj\Safescan.Webshop\EntityFrameworkCore.CompositeAttributes\bin\Debug\netcoreapp2.0\EntityFrameworkCore.CompositeAttributes.pdb
-C:\proj\Safescan.Webshop\EntityFrameworkCore.CompositeAttributes\obj\Debug\netcoreapp2.0\EntityFrameworkCore.CompositeAttributes.csprojResolveAssemblyReference.cache
-C:\proj\Safescan.Webshop\EntityFrameworkCore.CompositeAttributes\obj\Debug\netcoreapp2.0\EntityFrameworkCore.CompositeAttributes.dll
-C:\proj\Safescan.Webshop\EntityFrameworkCore.CompositeAttributes\obj\Debug\netcoreapp2.0\EntityFrameworkCore.CompositeAttributes.pdb

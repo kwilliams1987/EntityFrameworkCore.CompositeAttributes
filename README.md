@@ -26,7 +26,10 @@ public class CompositeEnitity
     [CompositeKey]
     public Int32 KeyPart2 { get; set; }
 
+<<<<<<< HEAD
     [CompositeInverseProperty(nameof(CompositeSubEntity.CompositeEnitity))]
+=======
+>>>>>>> 408bef35f32be4bb0fe0ffc0d0cf959918f28d33
     public virtual HashSet<CompositeSubEntity> CompositeSubEnitities { get; set; }
 }
 ```

@@ -9,10 +9,10 @@ namespace Microsoft.EntityFrameworkCore
 {
     public abstract class CompositeKeyDbContext: DbContext
     {
-        public CompositeKeyDbContext()
+        protected CompositeKeyDbContext()
             : base() { }
 
-        public CompositeKeyDbContext(DbContextOptions options)
+        protected CompositeKeyDbContext(DbContextOptions options)
             : base(options) { }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -47,15 +47,12 @@ namespace Microsoft.EntityFrameworkCore
                             if (targetProperty != default(PropertyInfo))
                             {
                                 var targetAttribute = targetProperty.GetAttribute<CompositeForeignKeyAttribute>();
-                                if (targetAttribute != default(CompositeForeignKeyAttribute))
+                                if (targetAttribute != default(CompositeForeignKeyAttribute) && modelBuilder.Model.ContainsEntity(argumentType))
                                 {
-                                    if (modelBuilder.Model.ContainsEntity(argumentType))
-                                    {
-                                        modelBuilder.Entity(argumentType)
-                                            .HasOne(entity, targetProperty.Name)
-                                            .WithMany(property.Name)
-                                            .HasForeignKey(targetAttribute.Name.Split(',').Select(c => c.Trim()).ToArray());
-                                    }
+                                    modelBuilder.Entity(argumentType)
+                                        .HasOne(entity, targetProperty.Name)
+                                        .WithMany(property.Name)
+                                        .HasForeignKey(targetAttribute.Name.Split(',').Select(c => c.Trim()).ToArray());
                                 }
                             }
                         }
@@ -67,23 +64,19 @@ namespace Microsoft.EntityFrameworkCore
                             if (targetProperty != default(PropertyInfo))
                             {
                                 var targetAttribute = targetProperty.GetAttribute<CompositeForeignKeyAttribute>();
-                                if (targetAttribute != default(CompositeForeignKeyAttribute))
+                                if (targetAttribute != default(CompositeForeignKeyAttribute) && modelBuilder.Model.ContainsEntity(targetType))
                                 {
-                                    if (modelBuilder.Model.ContainsEntity(targetType))
-                                    {
-                                        modelBuilder.Entity(targetType)
-                                            .HasOne(entity, targetProperty.Name)
-                                            .WithOne(property.Name)
-                                            .HasForeignKey(targetType, targetAttribute.Name.Split(',').Select(c => c.Trim()).ToArray());
-                                    }
+                                    modelBuilder.Entity(targetType)
+                                        .HasOne(entity, targetProperty.Name)
+                                        .WithOne(property.Name)
+                                        .HasForeignKey(targetType, targetAttribute.Name.Split(',').Select(c => c.Trim()).ToArray());
                                 }
                             }
                         }
                     }
                 }        
             }
-
-            
+                        
             base.OnModelCreating(modelBuilder);
         }
     }

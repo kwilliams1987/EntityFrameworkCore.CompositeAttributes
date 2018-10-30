@@ -11,7 +11,7 @@ If you have something to contribute, please do!
 ```csharp
 public class ExampleDbContext : CompositeKeyDbContext
 {
-    public DbSet<CompositeEnitity> CompositeEnitities { get; set; }
+    public DbSet<CompositeEntity> CompositeEnitities { get; set; }
     public DbSet<CompositeSubEntity> CompositeSubEnitities { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
